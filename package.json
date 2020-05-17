@@ -1,0 +1,24 @@
+{
+  "name": "one-percent",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "author": "Denys Pavlov <me@denys.me>",
+  "license": "MIT",
+  "description": "An exclusive website for the rarest of browsers",
+  "dependencies": {
+    "browserlist": "^1.0.1",
+    "browserslist-useragent-regexp": "^2.0.5",
+    "koa": "^2.11.0",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^8.0.8"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.11.3",
+    "@types/koa-logger": "^3.1.1",
+    "@types/koa-router": "^7.4.1",
+    "@types/node": "^14.0.1",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.2"
+  }
+}
