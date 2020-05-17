@@ -29,3 +29,11 @@ The potential is great for a niche, small community of technically-skilled peopl
   Knowing all the quirks of all the potential clients was a strong requirement for a webdev back in the day. Lots of people still have these latent memories and skills locked away. Let's set up a way to let them shine!
 
 - A CTF/Puzzle challenge(s). Show the fresh green devs how painful development was back in the day, and how good they have it now.
+
+## Running
+
+``sh
+npm install
+tsc
+node .
+``
