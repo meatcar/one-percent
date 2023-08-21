@@ -3,6 +3,7 @@ import Router from "koa-router";
 import logger from "koa-logger";
 import { buildUARegex } from "./filter";
 
+const port = process.env.PORT || 3000;
 
 const app = new Koa();
 const router = new Router();
@@ -27,6 +28,6 @@ app.use(logger());
 
 app.use(router.routes()).use(router.allowedMethods());
 
-app.listen(3000, () => {
-  console.log("Koa started at http://localhost:3000");
+app.listen(port, () => {
+  console.log(`Koa started at http://localhost:${port}`);
 });
