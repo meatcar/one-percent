@@ -20,7 +20,8 @@ const permittedBrowsers = getBrowsersList(query)
 const list = [...permittedBrowsers].join("\n");
 
 router.get("/", async (ctx, next) => {
-  if (regexp.test(ctx.headers["user-agent"])) {
+  const ua = ctx.headers["user-agent"] || "";
+  if (regexp.test(ua)) {
     ctx.body = "🥇🥈🏅 Welcome to the secret 1% club. 🥇🥈🏅";
   } else {
     ctx.body = `You don't belong here! Only one of the following browsers is allowed:\n\n${list}`;
