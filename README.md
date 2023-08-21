@@ -16,7 +16,7 @@ The potential is great for a niche, small community of technically-skilled peopl
 
 - It's just a User Agent filter, so spoofing a User Agent gets you in. I consider that a high enough bar.
 
-  An interesting exercise would be to write some JS to filter access from the clientside. The JS would need to be executable down to IE5.5.
+  An interesting exercise would be to write some JS to filter access from the client-side. The JS would need to be executable down to IE5.5.
 
 - Security of server and users is paramount, as we are letting browsers that we outdated for a reason to hit the site.
 
@@ -26,7 +26,7 @@ The potential is great for a niche, small community of technically-skilled peopl
 
 - JSFiddle with comments, users can mess around and compete for internet points in potentially wrecking old browsers.
 
-  Knowing all the quirks of all the potential clients was a strong requirement for a webdev back in the day. Lots of people still have these latent memories and skills locked away. Let's set up a way to let them shine!
+  Knowing all the quirks of all the potential clients was a strong requirement for a web-dev back in the day. Lots of people still have these latent memories and skills locked away. Let's set up a way to let them shine!
 
 - A CTF/Puzzle challenge(s). Show the fresh green devs how painful development was back in the day, and how good they have it now.
 
