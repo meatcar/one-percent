@@ -32,8 +32,7 @@ The potential is great for a niche, small community of technically-skilled peopl
 
 ## Running
 
-``sh
+```sh
 npm install
-tsc
-node .
-``
+npm run dev
+```
