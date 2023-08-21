@@ -1,30 +1,24 @@
 import Koa from "koa";
 import Router from "koa-router";
 import logger from "koa-logger";
+import { buildUARegex } from "./filter";
 
-import {
-  getUserAgentRegExp,
-  getBrowsersList,
-} from "browserslist-useragent-regexp";
 
 const app = new Koa();
 const router = new Router();
 
-const query = { browsers: ["< 0.01%"] };
-const regexp = getUserAgentRegExp(query);
-
-const permittedBrowsers = getBrowsersList(query)
-  .map(({ family, version }) => `- ${family} v${version.join(".")}`)
-  .reduce((acc, v) => acc.add(v), new Set());
-
-const list = [...permittedBrowsers].join("\n");
+/*
+ * We clamp each browser to 0.01% market share, so collectively they add up to 1%-ish world-wide share.
+ */
+const [regexp, browsers] = buildUARegex("< 0.01%");
+const prettyList = browsers.map((s) => `- ${s}`).join("\n");
 
 router.get("/", async (ctx, next) => {
   const ua = ctx.headers["user-agent"] || "";
   if (regexp.test(ua)) {
     ctx.body = "🥇🥈🏅 Welcome to the secret 1% club. 🥇🥈🏅";
   } else {
-    ctx.body = `You don't belong here! Only one of the following browsers is allowed:\n\n${list}`;
+    ctx.body = `You don't belong here! Only one of the following browsers is allowed:\n\n${prettyList}`;
   }
   await next();
 });
